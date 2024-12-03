@@ -1,27 +1,22 @@
-<link rel="stylesheet" type="text/css" href="billing.css">
-<script type="text/javascript" src="billing.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Photo Gallery</title>
+	<link rel="stylesheet" href="llery.css">
+	<script src = "gallery.js"></script>
+</head>
+<body>
+	
+	<div id = "image">
+		Hover over an image below to display here.
+	</div>
+	
+	<img class = "preview" alt = "Styling with a Bandana" src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon.jpg" onmouseover = "upDate(this)" onmouseout = "unDo()">
+	
+	<img class = "preview" alt = "With My Boy" src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon2.JPG" onmouseover = "upDate(this)" onmouseout = "unDo()">
+	
+	<img class = "preview" src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon3.jpg" alt = "Young Puppy" onmouseover = "upDate(this)" onmouseout = "unDo()">
 
-
-<h1>JavaScript Homework</h1>
-	<p>Add the JavaScript code needed to enable auto-complete on this form.  Whenever the checkbox is checked, the code should automatically copy the values from Shipping Name and Shipping Zip into the Billing Name and Billing Zip.  If the checkbox is unchecked, the Billing Name and Billing Zip should go blank.</p>
-
-<form>
-		<fieldset>
-			<legend>Shipping Information</legend>
-			<label for ="shippingName">Name:</label>
-			<input type = "text" name = "shipName" id = "shippingName" required><br/>
-			<label for = "shippingZip">Zip code:</label>
-			<input type = "text" name = "shipZip" id = "shippingZip" pattern = "[0-9]{5}" required><br/>
-		</fieldset>
-		<input type="checkbox" id="same" name="same" onchange= "billingFunction()"/>
-		<label for = "same">Is the Billing Information the Same?</label>
-				
-		<fieldset> 
-			<legend>Billing Information</legend>
-			<label for ="billingName">Name:</label>
-			<input type = "text" name = "billName" id = "billingName" required><br/>
-			<label for = "billingZip">Zip code:</label>
-			<input type = "text" name = "billZip" id = "billingZip" pattern = "[0-9]{5}" required><br/>
-		</fieldset>
-			<input type = "submit" value = "Verify"/>
-		</form>
+</body>
+</html>
