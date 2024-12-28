@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 // Données initiales des chambres
 const rooms = [
@@ -160,6 +161,7 @@ const RoomList = () => {
 };
 
 const BlogPage = () => {
+  const navigate = useNavigate();
   return (
     <div>
       {/* Navbar */}
@@ -182,18 +184,17 @@ const BlogPage = () => {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
-                <a className="nav-link active" href="#">
+                <a 
+                onClick={() => navigate('/rooms')}
+                className="nav-link active">
                   Accueil
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  À propos
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Contact
+                <a 
+                onClick={() => navigate('/roomsreserver')}
+                className="nav-link">
+                  À propos les chambre
                 </a>
               </li>
             </ul>
