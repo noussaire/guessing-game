@@ -19,7 +19,7 @@ const rooms = [
   {
     id: 102,
     title: "Chambre 102",
-    available: false,
+    available: true,
     price: 100,
     details: "Chambre Supérieure - Vue sur piscine",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEbCTM_i8wW41rYmyV_eBEqZIZWaJZF9gw9Jon4c74QI96w6dRLWjphapOgJ3yzRrmtfs&usqp=CAU", // Remplacez par l'URL réelle de l'image
@@ -81,15 +81,14 @@ const RoomList = () => {
 
 /////////////////////////////////////////////////////////////////
 
-
+  const navigate = useNavigate();
   const [roomsState, setRoomsState] = useState(rooms);
 
   // Fonction pour gérer la réservation de la chambre
   const handleReservation = (id) => {
     const room = roomsState.find((room) => room.id === id); // Trouve la chambre par ID
     if (room) {
-      room.available = false; // Marque la chambre comme non disponible directement
-      setRoomsState([...roomsState]); // Force le rendu avec l'état modifié
+      navigate(`/confirmation/${id}`)
     }
   };
   
@@ -197,6 +196,15 @@ const BlogPage = () => {
                   À propos les chambre
                 </a>
               </li>
+              <li className="nav-item">
+          <button 
+                onClick={() => navigate('/')} 
+              className="btn btn-danger nav-link"
+             >
+         log out 
+        </button>
+        </li>
+
             </ul>
           </div>
         </div>
